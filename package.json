@@ -7,7 +7,7 @@
   "author": "<troychryssos@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "compile": "yarn webpack",
+    "compile": "npm webpack",
     "start": "node server.js",
     "build:dev": "routing=hash webpack --config webpack.config.dev.js --colors ",
     "lint": "eslint src --fix"
@@ -16,6 +16,7 @@
     "@babel/core": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-env": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "babel-eslint": "^8.2.2",
     "babel-loader": "^8.0.4",
@@ -24,6 +25,7 @@
     "css-loader": "^0.28.4",
     "eslint": "^5.0.0",
     "eslint-config-airbnb": "^15.1.0",
+    "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
