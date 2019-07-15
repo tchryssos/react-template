@@ -11,7 +11,7 @@
 	"extends": "airbnb",
 
 	"rules": {
-		"max-len": ["error", { "code": 90 }],
+		"max-len": 0,
 		"one-var": 0,
 		"no-console": ["error", { "allow": ["warn", "error"] }],
 		"no-multiple-empty-lines": ["error", {"max": 2}],
@@ -28,16 +28,19 @@
 		"import/no-unresolved": [2, { "ignore": ["constants", "components"] } ],
 		"import/no-extraneous-dependencies": 0,
 		"import/extensions": ["never"],
+		"import/prefer-default-export": 0,
 
 		"jsx-a11y/href-no-hash": 0,
 		"jsx-a11y/label-has-for": 0,
+		"jsx-a11y/no-static-element-interactions": 0,
 
 
 		"react/jsx-indent": [2, "tab"],
 		"react/jsx-indent-props": ["error", "tab"],
 		"react/jsx-filename-extension": 0,
 		"react/jsx-no-bind": 1,
-		"react/require-default-props": 0
+		"react/require-default-props": 0,
+		"react/prop-types": 0
 	},
 	"parserOptions": {
 		"ecmaFeatures": {

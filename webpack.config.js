@@ -1,5 +1,4 @@
 const path = require('path')
-const autoprefixer = require('autoprefixer')
 
 module.exports = {
 	context: path.join(__dirname, 'src'),
@@ -37,23 +36,8 @@ module.exports = {
 				loader: 'html-loader',
 			},
 			{
-				test: /\.(png|jpg|gif)$/,
+				test: /\.(png|jpg|gif|woff|woff2|ttf|svg)$/,
 				loader: 'url-loader?limit=8192',
-			},
-			{
-				test: /(\.scss|\.css)$/,
-				use: [{
-					loader: 'style-loader',
-				}, {
-					loader: 'css-loader',
-				}, {
-					loader: 'postcss-loader',
-					options: {
-						plugins: [autoprefixer],
-					},
-				}, {
-					loader: 'sass-loader',
-				}],
 			},
 		],
 	},
@@ -63,9 +47,10 @@ module.exports = {
 		],
 		alias: {
 			components: path.join(__dirname, 'src/components'),
-			// static: path.join(__dirname, 'src/static'),
+			static: path.join(__dirname, 'src/static'),
 			pages: path.join(__dirname, 'src/pages'),
-			// constants: path.join(__dirname, 'src/constants'),
+			styles: path.join(__dirname, 'src/styles'),
+			constants: path.join(__dirname, 'src/constants'),
 		},
 	},
 }

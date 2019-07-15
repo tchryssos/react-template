@@ -1,13 +1,16 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
-import { Home } from 'pages'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Home from 'pages/Home'
 
 render(
-	<div>
-		<BrowserRouter>
-			<Home />
-		</BrowserRouter>
-	</div>,
+	<BrowserRouter>
+		<>
+			<Switch>
+				<Route path="/" exact component={Home} />
+			</Switch>
+			{/* NavBar?? */}
+		</>
+	</BrowserRouter>,
 	document.getElementById('app'),
 )
