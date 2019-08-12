@@ -37,7 +37,12 @@ module.exports = {
 			},
 			{
 				test: /\.(png|jpg|gif|woff|woff2|ttf|svg|pdf)$/,
-				loader: 'url-loader?limit=8192',
+				loader: 'file-loader',
+				options: {
+					name: '[name].[ext]',
+					outputPath: 'static/assets',
+					publicPath: 'static/assets',
+				},
 			},
 		],
 	},
@@ -51,6 +56,7 @@ module.exports = {
 			pages: path.join(__dirname, 'src/pages'),
 			styles: path.join(__dirname, 'src/styles'),
 			constants: path.join(__dirname, 'src/constants'),
+			util: path.join(__dirname, 'src/util'),
 			contexts: path.join(__dirname, 'src/contexts'),
 		},
 	},
