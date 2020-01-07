@@ -7,12 +7,18 @@ module.exports = {
 	],
 	output: {
 		path: path.join(__dirname, 'www'),
-		filename: 'bundle.js',
+		filename: '[name].bundle.js',
+		chunkFilename: '[name].bundle.js',
 		publicPath: '/',
 	},
 	stats: {
 		errorDetails: true,
 		reasons: true,
+	},
+	optimization: {
+		splitChunks: {
+			chunks: 'all',
+		},
 	},
 	module: {
 		rules: [
