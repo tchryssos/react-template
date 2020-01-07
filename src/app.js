@@ -1,7 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom'
-import { JssProvider } from 'react-jss'
 import Home from 'pages/Home'
 
 const App = ({ location }) => {
@@ -20,16 +19,9 @@ const App = ({ location }) => {
 
 const RouterApp = withRouter(props => <App {...props} />)
 
-const generateJssId = (rule, sheet) => {
-	let counter = 0
-	return `app--${rule.key}-${counter++}`
-}
-
 render(
-	<JssProvider generateId={generateJssId}>
-		<BrowserRouter>
-			<RouterApp />
-		</BrowserRouter>
-	</JssProvider>,
+	<BrowserRouter>
+		<RouterApp />
+	</BrowserRouter>,
 	document.getElementById('app'),
 )
