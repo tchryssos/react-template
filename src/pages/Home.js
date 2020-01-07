@@ -1,9 +1,20 @@
 import React from 'react'
+import injectSheet from 'react-jss'
 
-const Home = () => (
-	<>
-		<div>Whoa cool website</div>
-	</>
-)
+const styles = {
+	testClass: {
+		width: 100,
+		height: 100,
+		backgroundColor: 'blue',
+	},
+}
 
-export default Home
+const Home = ({ classes }) => {
+	return (
+		<>
+			<div className={classes.testClass}>Whoa cool website</div>
+		</>
+	)
+}
+
+export default injectSheet(styles)(Home)

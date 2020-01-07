@@ -46,6 +46,7 @@ module.exports = {
 			},
 		],
 	},
+	devtool: 'inline-source-map',
 	resolve: {
 		modules: [
 			'node_modules',
