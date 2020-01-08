@@ -3,6 +3,8 @@ import { render } from 'react-dom'
 import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom'
 import Home from 'pages/Home'
 
+import './app.css'
+
 const App = ({ location }) => {
 	// Create global effects or state here
 	// with access to router location

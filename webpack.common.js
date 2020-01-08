@@ -19,6 +19,8 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, 'src/app.html'),
+			filename: 'index.html',
+			hash: true,
 		}),
 	],
 	optimization: {
@@ -55,6 +57,10 @@ module.exports = {
 					outputPath: 'static/assets',
 					publicPath: 'static/assets',
 				},
+			},
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader']
 			},
 		],
 	},
