@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
 	context: path.join(__dirname, 'src'),
@@ -15,6 +16,11 @@ module.exports = {
 		errorDetails: true,
 		reasons: true,
 	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: path.resolve(__dirname, 'src/app.html'),
+		}),
+	],
 	optimization: {
 		splitChunks: {
 			chunks: 'all',
