@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
 	context: path.join(__dirname, 'src'),
@@ -16,12 +17,17 @@ module.exports = {
 		errorDetails: true,
 		reasons: true,
 	},
+	devServer: {
+		historyApiFallback: true,
+		compress: true,
+	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, 'src/app.html'),
 			filename: 'index.html',
 			hash: true,
 		}),
+		// new BundleAnalyzerPlugin(),
 	],
 	optimization: {
 		splitChunks: {
