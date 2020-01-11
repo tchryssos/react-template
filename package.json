@@ -8,8 +8,8 @@
   "author": "<troychryssos@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --progress --colors --hot --content-base build --inline --config webpack.dev.js --port 3000",
-    "build": "webpack --config webpack.prod.js",
+    "start": "./node_modules/.bin/webpack-dev-server --progress --colors --hot --content-base build --inline --mode development --config webpack.config.js --port 3000",
+    "build": "webpack --mode production --config webpack.config.js",
     "lint": "eslint src --fix"
   },
   "engines": {
