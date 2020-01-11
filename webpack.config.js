@@ -6,7 +6,6 @@ const CompressionPlugin = require('compression-webpack-plugin')
 module.exports = (env, argv) => {
 	process.env.NODE_ENV = argv.mode
 	const isProd = argv.mode === 'production'
-	console.log(isProd)
 
 	return {
 		context: path.join(__dirname, 'src'),
