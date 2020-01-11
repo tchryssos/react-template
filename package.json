@@ -12,6 +12,9 @@
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint src --fix"
   },
+  "engines": {
+    "node" : ">= 13.0.0"
+  },
   "dependencies": {
     "@babel/core": "^7.2.0",
     "@babel/plugin-proposal-class-properties": "^7.2.3",
@@ -41,6 +44,7 @@
     "webpack": "^4.35.2"
   },
   "devDependencies": {
+    "compression-webpack-plugin": "^3.1.0",
     "css-loader": "^3.4.1",
     "html-webpack-plugin": "^3.2.0",
     "webpack-bundle-analyzer": "^3.6.0",

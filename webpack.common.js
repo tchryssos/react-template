@@ -1,8 +1,9 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CompressionPlugin = require('compression-webpack-plugin')
 
-module.exports = {
+const config = {
 	context: path.join(__dirname, 'src'),
 	entry: [
 		'./app.js',
@@ -27,9 +28,15 @@ module.exports = {
 			filename: 'index.html',
 			hash: true,
 		}),
+		new CompressionPlugin({
+			cache: true,
+			test: /\.(js|png|css|jpg|jpeg|gif|svg|ico|xml|woff|woff2|ttf|otf|eot)$/,
+			deleteOriginalAssets: false,
+		}),
 		// new BundleAnalyzerPlugin(),
 	],
 	optimization: {
+		runtimeChunk: 'single',
 		splitChunks: {
 			chunks: 'all',
 		},
@@ -85,4 +92,9 @@ module.exports = {
 			contexts: path.join(__dirname, 'src/contexts'),
 		},
 	},
+}
+
+module.exports = (env, argv) => {
+	process.env.NODE_ENV = argv.mode
+	return config
 }
