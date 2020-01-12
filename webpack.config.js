@@ -70,6 +70,7 @@ module.exports = (env, argv) => {
 				template: path.resolve(__dirname, 'src/app.html'),
 				filename: 'index.html',
 				hash: isProd,
+				favicon: 'static/favicon.ico',
 			}),
 			new CompressionPlugin({
 				cache: true,
