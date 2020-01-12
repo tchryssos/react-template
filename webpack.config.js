@@ -9,43 +9,14 @@ module.exports = (env, argv) => {
 
 	return {
 		context: path.join(__dirname, 'src'),
-		entry: [
-			'./app.js',
-		],
-		output: {
-			path: path.join(__dirname, 'www'),
-			filename: '[name].bundle.js',
-			chunkFilename: '[name].bundle.js',
-			publicPath: '/',
-		},
-		devtool: isProd ? '' : 'inline-source-map',
-		stats: {
-			errorDetails: true,
-			reasons: true,
-		},
 		devServer: {
 			historyApiFallback: true,
 			compress: true,
 		},
-		plugins: [
-			new HtmlWebpackPlugin({
-				template: path.resolve(__dirname, 'src/app.html'),
-				filename: 'index.html',
-				hash: isProd,
-			}),
-			new CompressionPlugin({
-				cache: true,
-				test: /\.(js|png|css|jpg|jpeg|gif|svg|ico|xml|woff|woff2|ttf|otf|eot)$/,
-				deleteOriginalAssets: false,
-			}),
-			// new BundleAnalyzerPlugin(),
+		devtool: isProd ? '' : 'inline-source-map',
+		entry: [
+			'./app.js',
 		],
-		optimization: {
-			runtimeChunk: 'single',
-			splitChunks: {
-				chunks: 'all',
-			},
-		},
 		module: {
 			rules: [
 				{
@@ -82,7 +53,31 @@ module.exports = (env, argv) => {
 				},
 			],
 		},
-		devtool: 'inline-source-map',
+		optimization: {
+			runtimeChunk: 'single',
+			splitChunks: {
+				chunks: 'all',
+			},
+		},
+		output: {
+			path: path.join(__dirname, 'www'),
+			filename: '[name].bundle.js',
+			chunkFilename: '[name].bundle.js',
+			publicPath: '/',
+		},
+		plugins: [
+			new HtmlWebpackPlugin({
+				template: path.resolve(__dirname, 'src/app.html'),
+				filename: 'index.html',
+				hash: isProd,
+			}),
+			new CompressionPlugin({
+				cache: true,
+				test: /\.(js|png|css|jpg|jpeg|gif|svg|ico|xml|woff|woff2|ttf|otf|eot)$/,
+				deleteOriginalAssets: false,
+			}),
+			// new BundleAnalyzerPlugin(),
+		],
 		resolve: {
 			modules: [
 				'node_modules',
@@ -96,6 +91,10 @@ module.exports = (env, argv) => {
 				util: path.join(__dirname, 'src/util'),
 				contexts: path.join(__dirname, 'src/contexts'),
 			},
+		},
+		stats: {
+			errorDetails: true,
+			reasons: true,
 		},
 	}
 }
