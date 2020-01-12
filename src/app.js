@@ -16,6 +16,9 @@ const useStyles = createUseStyles(() => {
 	}
 
 	return {
+		'@import': [
+			// Import fonts here
+		],
 		'@global': {
 			html: baseStyle,
 			body: {

@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
 	test: {
-		backgroundColor: 'blue',
+		backgroundColor: '#6edb9f',
 		height: 100,
 		width: 100,
 	}
