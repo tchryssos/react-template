@@ -5,7 +5,11 @@ module.exports = {
   stories: [
     '../src/stories/*.stories.jsx',
   ],
-  addons: ['@storybook/addon-actions', '@storybook/addon-links'],
+  addons: [
+    '@storybook/addon-actions',
+    '@storybook/addon-links',
+    '@storybook/addon-viewport/register',
+  ],
   webpackFinal: async config => {
     const custom = customFunc(null, { mode: 'staging'})
 
