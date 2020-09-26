@@ -6,10 +6,10 @@ const useStyles = createUseStyles({
 		backgroundColor: '#6edb9f',
 		height: 100,
 		width: 100,
-	}
+	},
 })
 
-const Home = () => {
+const Home: React.FC = () => {
 	const classes = useStyles()
 	return (
 		<>

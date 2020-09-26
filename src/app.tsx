@@ -1,10 +1,18 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom'
+import {
+	BrowserRouter, Route, Switch, withRouter,
+} from 'react-router-dom'
 import Home from 'pages/Home'
 import globalUseStyles from 'constants/styles/globalUseStyles'
 
-const App = ({ location }) => {
+interface AppProps {
+	location: {
+		pathname: string,
+	},
+}
+
+const App: React.FC<AppProps> = ({ location: { pathname } }) => {
 	// Create global effects or state here
 	// with access to router location
 	globalUseStyles()
@@ -18,7 +26,7 @@ const App = ({ location }) => {
 	)
 }
 
-const RouterApp = withRouter(props => <App {...props} />)
+const RouterApp = withRouter(({ location }) => <App location={location} />)
 
 render(
 	<BrowserRouter>

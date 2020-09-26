@@ -13,24 +13,18 @@ module.exports = (env, argv) => {
 			historyApiFallback: true,
 			compress: true,
 		},
-		devtool: isProd ? '' : 'inline-source-map',
+		devtool: isProd ? 'source-map' : 'inline-source-map',
 		entry: [
-			'./app.jsx',
+			'./app.tsx',
 		],
 		module: {
 			rules: [
 				{
-					test: /\.jsx?$/,
+					test: /\.tsx?$/,
 					exclude: /node_modules/,
 					use: [
 						{
-							loader: 'babel-loader',
-							options: {
-								presets: [
-									'@babel/react',
-									'@babel/preset-env',
-								],
-							},
+							loader: 'ts-loader',
 						},
 					],
 				},
@@ -66,7 +60,7 @@ module.exports = (env, argv) => {
 			path: path.join(__dirname, 'www'),
 			filename: '[name].bundle.js',
 			chunkFilename: '[name].bundle.js',
-			publicPath: '/',
+			publicPath: isProd ? './' : '/',
 		},
 		plugins: [
 			new HtmlWebpackPlugin({
@@ -83,7 +77,7 @@ module.exports = (env, argv) => {
 			// new BundleAnalyzerPlugin(),
 		],
 		resolve: {
-			extensions: ['*', '.jsx', '.js'],
+			extensions: ['*', '.jsx', '.js', '.ts', '.tsx'],
 			modules: [
 				'node_modules',
 			],
@@ -93,8 +87,7 @@ module.exports = (env, argv) => {
 				pages: path.join(__dirname, 'src/pages'),
 				styles: path.join(__dirname, 'src/styles'),
 				constants: path.join(__dirname, 'src/constants'),
-				util: path.join(__dirname, 'src/util'),
-				contexts: path.join(__dirname, 'src/contexts'),
+				logic: path.join(__dirname, 'src/logic'),
 			},
 		},
 		stats: {
