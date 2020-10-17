@@ -39,8 +39,8 @@ module.exports = {
           pages: path.join(__dirname, '../src/pages'),
           styles: path.join(__dirname, '../src/styles'),
           constants: path.join(__dirname, '../src/constants'),
-          util: path.join(__dirname, '../src/util'),
-          contexts: path.join(__dirname, '../src/contexts'),
+          logic: path.join(__dirname, '../src/logic'),
+          types: path.join(__dirname, '../src/types'),
         },
       },
     })

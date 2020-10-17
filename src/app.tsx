@@ -4,7 +4,12 @@ import {
 	BrowserRouter, Route, Switch, withRouter,
 } from 'react-router-dom'
 import Home from 'pages/Home'
-import globalUseStyles from 'constants/styles/globalUseStyles'
+import useGlobalStyles from 'logic/hooks/useGlobalStyles'
+import disableDevTools from 'logic/util/disableDevTools'
+
+if (process.env.NODE_ENV === 'production') {
+	disableDevTools()
+}
 
 interface AppProps {
 	location: {
@@ -15,7 +20,7 @@ interface AppProps {
 const App: React.FC<AppProps> = ({ location: { pathname } }) => {
 	// Create global effects or state here
 	// with access to router location
-	globalUseStyles()
+	useGlobalStyles()
 	return (
 		<>
 			<Switch>
