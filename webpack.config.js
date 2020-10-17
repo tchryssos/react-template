@@ -88,6 +88,7 @@ module.exports = (env, argv) => {
 				styles: path.join(__dirname, 'src/styles'),
 				constants: path.join(__dirname, 'src/constants'),
 				logic: path.join(__dirname, 'src/logic'),
+				types: path.join(__dirname, 'src/types'),
 			},
 		},
 		stats: {

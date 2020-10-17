@@ -16,7 +16,8 @@
         "pages/*": ["src/pages/*"],
         "logic/*": ["src/logic/*"],
         "constants/*": ["src/constants/*"],
-        "static/*": ["src/static/*"]
+				"static/*": ["src/static/*"],
+				"types/*": ["src/types/*"]
     }
 	},
 }
