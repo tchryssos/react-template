@@ -22,7 +22,7 @@ There are 2 ways to run the app locally:
 
 ## Storybook
 
-Storybook is setup to be fairly plug-and-play assuming you know Storybook already. If not, [head to their site](https://storybook.js.org/docs/react/get-started/introduction) to get the lowdown. Stories should be added to the `stories` directory and have filenames with the following pattern: \[componentName\].stories.tsx.
+Storybook is setup to be fairly plug-and-play assuming you know Storybook already. If not, [head to their site](https://storybook.js.org/docs/react/get-started/introduction) to get the lowdown. Stories should be added to the `stories` directory and have filenames with the following pattern: `\[componentName\].stories.tsx`.
 
 If the above rules are followed, Storybook should find the files automatically. 
 
