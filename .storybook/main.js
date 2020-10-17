@@ -3,7 +3,7 @@ const customFunc = require('../webpack.config.js')
 
 module.exports = {
   stories: [
-    '../src/stories/*.stories.jsx',
+    '../src/stories/*.stories.tsx',
   ],
   addons: [
     '@storybook/addon-actions',
