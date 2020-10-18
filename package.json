@@ -8,7 +8,7 @@
   "author": "<troychryssos@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "npm run start:staging",
+    "start": "./node_modules/.bin/webpack-dev-server --progress --colors --hot --content-base build --inline --mode=development --config webpack.config.js --port 3000",
     "start:build": "npm run build && npx http-server www -p 3003 --proxy http://localhost:3003?",
     "build": "webpack -p --mode=production --config webpack.config.js",
     "lint": "eslint src --fix",
