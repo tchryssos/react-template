@@ -1,14 +1,13 @@
 {
   "presets": [
-    "@babel/react",
+    "@babel/preset-env",
     [
-      "@babel/preset-env",
-      {
-        "modules": false
-      }
+      "@babel/preset-react",
+      { "runtime": "automatic", "importSource": "@emotion/react" }
     ]
   ],
   "plugins": [
+    "@emotion/babel-plugin",
     "@babel/plugin-proposal-export-default-from",
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-transform-runtime"

@@ -1,21 +1,17 @@
-import React from 'react'
-import { createUseStyles } from 'react-jss'
+import { css } from '@emotion/react';
 
-const useStyles = createUseStyles({
-	test: {
-		backgroundColor: '#6edb9f',
-		height: 100,
-		width: 100,
-	},
-})
+const styles = {
+	test: css`
+		background-color: #6edb9f;
+		height: 100px;
+		width: 100px;
+	`,
+};
 
-const TestComponent: React.FC = () => {
-	const classes = useStyles()
-	return (
-		<>
-			<div className={classes.test}>Whoa cool website</div>
-		</>
-	)
-}
+const TestComponent: React.FC = () => (
+	<>
+		<div css={styles.test}>Whoa cool website</div>
+	</>
+);
 
-export default TestComponent
+export default TestComponent;

@@ -1,15 +1,16 @@
 {
 	"extends": "@tsconfig/recommended/tsconfig.json",
 	"compilerOptions": {
+		"moduleResolution": "node",
 		"outDir": "./dist/",
 		"sourceMap": true,
 		"noImplicitAny": true,
 		"skipLibCheck": true,
-		"resolveJsonModule": true,
 		"strict": true,
-		"module": "commonjs",
-		"target": "es6",
-		"jsx": "react",
+		"module": "esnext",
+		"target": "es2015",
+		"jsx": "react-jsx",
+		"jsxImportSource": "@emotion/react",
 		"baseUrl": "./",
     "paths": {
         "components/*": ["src/components/*"],
@@ -17,7 +18,9 @@
         "logic/*": ["src/logic/*"],
         "constants/*": ["src/constants/*"],
 				"static/*": ["src/static/*"],
-				"types/*": ["src/types/*"]
+				"types/*": ["src/types/*"],
+				"routes/*": ["src/routes/*"],
+				"theme/*": ["src/theme/*"],
     }
 	},
 }

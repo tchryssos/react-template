@@ -1,11 +1,11 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
-const CompressionPlugin = require('compression-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = (env, argv) => {
-	process.env.NODE_ENV = argv.mode
-	const isProd = argv.mode === 'production'
+	process.env.NODE_ENV = argv.mode;
+	const isProd = argv.mode === 'production';
 
 	return {
 		context: path.join(__dirname, 'src'),
@@ -14,9 +14,7 @@ module.exports = (env, argv) => {
 			compress: true,
 		},
 		devtool: isProd ? 'source-map' : 'inline-source-map',
-		entry: [
-			'./app.tsx',
-		],
+		entry: ['./app.tsx'],
 		module: {
 			rules: [
 				{
@@ -70,7 +68,6 @@ module.exports = (env, argv) => {
 				favicon: 'static/favicon.ico',
 			}),
 			new CompressionPlugin({
-				cache: true,
 				test: /\.(js|png|css|jpg|jpeg|gif|svg|ico|xml|woff|woff2|ttf|otf|eot)$/,
 				deleteOriginalAssets: false,
 			}),
@@ -78,9 +75,7 @@ module.exports = (env, argv) => {
 		],
 		resolve: {
 			extensions: ['*', '.jsx', '.js', '.ts', '.tsx'],
-			modules: [
-				'node_modules',
-			],
+			modules: ['node_modules'],
 			alias: {
 				components: path.join(__dirname, 'src/components'),
 				static: path.join(__dirname, 'src/static'),
@@ -95,5 +90,5 @@ module.exports = (env, argv) => {
 			errorDetails: true,
 			reasons: true,
 		},
-	}
-}
+	};
+};
